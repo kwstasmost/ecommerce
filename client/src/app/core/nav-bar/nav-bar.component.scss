@@ -9,3 +9,22 @@
     top:-12px;
     right:32px;
 }
+
+a {
+    // text-decoration: none;
+    color: #343a40;
+
+    &.active { 
+        //sos
+        color: orange;
+    }
+}
+
+.logo {
+    cursor: pointer;
+
+    &.focus{
+        //episode 110 when focused-clicked the logo creates an outline on its own
+        outline: none;
+    }
+}
