@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IProduct } from 'src/app/shared/models/product';
+import { BreadcrumbService } from 'xng-breadcrumb';
 import { ShopService } from '../shop.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class ProductDetailsComponent implements OnInit {
   //then we get the data and it appears in the page
   //so we use to use ngif to solve this
 
-  constructor(private shopService: ShopService, private activatedRoute: ActivatedRoute) { }
+  constructor(private shopService: ShopService, private activatedRoute: ActivatedRoute, private BcService: BreadcrumbService) { }
 
   ngOnInit(): void {
     this.loadProduct();
@@ -25,6 +26,7 @@ export class ProductDetailsComponent implements OnInit {
     //+ in the start makes the string number!!!!!!
     this.shopService.getProduct(+this.activatedRoute.snapshot.paramMap.get('id')).subscribe(product => {
       this.product = product;
+      this.BcService.set('@productDetails', product.name);
     });
   }
 }

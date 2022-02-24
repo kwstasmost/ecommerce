@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit{
   //bugs: count and pagination doesnt work- cant change page manually
   //https://valor-software.com/ngx-bootstrap/#/components/pagination?tab=overview
-  
+  //130 131 loading indicators left to do
+
   //its not good to inject http in a component
   //use services instead
   constructor() {}

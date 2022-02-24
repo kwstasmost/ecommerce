@@ -6,8 +6,8 @@ import { HomeComponent } from './home/home.component';
 
 //lazy loading -> loadchildren
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'shop', loadChildren: () => import('./shop/shop.module').then(mod => mod.ShopModule)},
+  {path: '', component: HomeComponent,  data: {breadcrumb:'Home'}},
+  {path: 'shop', loadChildren: () => import('./shop/shop.module').then(mod => mod.ShopModule),  data: {breadcrumb:'Shop'}},
   {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 
